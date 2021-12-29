@@ -3,6 +3,8 @@ The primary application script
 """
 
 from sudoku import *
+import sys
+
 
 def sudoku():
 	board = []
@@ -13,8 +15,18 @@ def sudoku():
 		board.append(row)
 	Sudoku(board).run()
 
+
 if __name__ == '__main__':
-	print('What game do you want to play?')
-	game = input('Enter \'s\' for sudoku ')
-	if game == 's':
-		sudoku()
+	if len(sys.argv) > 1:
+		if sys.argv[1] == 'EASY':
+			Sudoku(EASY).run()
+		elif sys.argv[1] == 'HARD':
+			Sudoku(HARD).run()
+	else:
+		print('What game do you want to play?')
+		print('Enter \'s\' for sudoku ')
+		print()
+		game = input()
+		if game == 's':
+			print('Beginning sudoku, enter a valid board:')
+			sudoku()

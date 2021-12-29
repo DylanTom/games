@@ -1,5 +1,8 @@
 """
-A class for sudoku.
+A module providing a class for solving sudoku.
+
+Author: Dylan Tom
+Date: December 29, 2021
 """
 
 import time
@@ -31,9 +34,15 @@ HARD = [
 
 class Sudoku:
 	"""
-	
+	A class for sudoku.
+
+	Attribute SIZE: the size of the sudoku board
+	Invariant: SIZE is an int
+
+	Attribute BOX_SIZE: size of a box, a subset of the sudoku board
+	Invariant: BOX_SIZE is an int less than SIZE
 	"""
-	# Class Attributes
+
 	SIZE = 9
 	BOX_SIZE = 3
 
