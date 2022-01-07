@@ -2,10 +2,11 @@
 A module providing a class for solving sudoku.
 
 Author: Dylan Tom
-Date: December 29, 2021
+Date: January 3, 2022
 """
 
 import time
+import sys
 
 # Test boards
 EASY = [
@@ -162,4 +163,23 @@ class Sudoku:
 
 		return True
 	
+def sudoku():
+	board = []
+	for i in range(Sudoku.SIZE):
+		row = []
+		for j in range(Sudoku.SIZE):
+			row.append(int(input(f'WHat is in ({i+1}, {j+1})?')))
+		board.append(row)
+	Sudoku(board).run()
+
+
+if __name__ == '__main__':
+	if len(sys.argv) > 1:
+		if sys.argv[1] == 'EASY':
+			Sudoku(EASY).run()
+		elif sys.argv[1] == 'HARD':
+			Sudoku(HARD).run()
+	else:
+		print('Beginning sudoku, enter a valid board:')
+		sudoku()
 
