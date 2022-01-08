@@ -12,14 +12,18 @@ class TicTacToeEngine():
 	SIZE = 3
 
 	def __init__(self):
-		self.board = []
+		self.board = [['X', 'O', '-'],['-','-','O'],['O','-','-']]
+		#self.board = self._create_board()
 
 	def _create_board(self):
+		final = []
 		for row in range(TicTacToeEngine.SIZE):
 			row = []
 			for col in range(TicTacToeEngine.SIZE):
 				row.append('-')
-			self.board.append(row)
+			final.append(row)
+		
+		return final
 
 	def _is_board_filled(self):
 		for row in range(TicTacToeEngine.SIZE):
@@ -28,6 +32,7 @@ class TicTacToeEngine():
 					return False
 		
 		return True
+
 
 	# Check whether the board is filled
 	# Check whether player has won or not

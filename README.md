@@ -23,3 +23,10 @@ To run the HARD test board,
 ```
 python sudoku.py HARD
 ```
+
+## Tic Tac Toe
+Need to install `pygame`.
+
+```
+pip install pygame
+```
